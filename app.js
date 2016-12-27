@@ -1,10 +1,24 @@
 var blocksArray = [];
 var express = require('express');
 var socket = require('socket.io');
+var https = require('https');
+// var pem = require('pem');
+//
+// var https = require('https'),
+//     pem.createCertificate({days:1, selfSigned:true}, function(err, keys){
+//       var app = express();
+//
+//       app.get('/',  requireAuth, function(req, res){
+//         res.send('o hai!');
+//       });
+//
+//       https.createServer({key: keys.serviceKey, cert: keys.certificate}, app).listen(9876);
+//     });
+//
 
-
-var app = express();
-var server = app.listen(9876);
+//
+// var app = express();
+// var server = app.listen(9876);
 
 var io = socket(server);
 
