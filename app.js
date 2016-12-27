@@ -17,8 +17,8 @@ var https = require('https');
 //
 
 //
-// var app = express();
-// var server = app.listen(9876);
+var app = express();
+var server = app.listen(9876);
 
 var io = socket(server);
 
