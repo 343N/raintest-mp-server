@@ -27,13 +27,20 @@ io.sockets.on('connection', function(socket){
     socket.broadcast.emit('removeBlock', data);
   });
 
+  socket.on('clearDrawing', function(){
+    blocksArray = [];
+    socket.broadcast.emit('clearDrawing');
+  })
+
 
 
   socket.on('recieveMouseLocation', function(data){
     sendInfo = {
       id: socket.id,
       x: data.mouseX,
-      y: data.mouseY
+      y: data.mouseY,
+      name: data.name,
+      col: data.col
     }
 
     socket.broadcast.emit('recieveMouseLocation', sendInfo);
